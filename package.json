@@ -4,8 +4,9 @@
   "description": "Reference implementation of the proposed Global Privacy Control standard with sample code and instructions",
   "main": "server.js",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.17.1",
-    "ejs": "^3.1.10"
+    "serverless-http": "^3.2.0"
   },
   "scripts": {
     "start": "node server.js"

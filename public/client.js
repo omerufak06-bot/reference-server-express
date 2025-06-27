@@ -6,7 +6,7 @@ document.addEventListener('readystatechange', (event) => {
     if (document.readyState === 'interactive' && typeof(navigator.globalPrivacyControl) !== 'undefined') {
         const gpcStatus = document.getElementById('dom-signal-status')
         const gpcValue = document.getElementById('gpc-dom-value')
-        const domSvgPath = document.getElementById('dom-thumbs-up')
+        const domSvgPath = document.getElementById('dom-signal-detected')
 
         if (navigator.globalPrivacyControl) {
           domSvgPath.style.fill = "rgb(0, 212, 255)"
