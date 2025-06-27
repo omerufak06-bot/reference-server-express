@@ -1,8 +1,10 @@
 const express = require("express");
+const path = require("path");
 const app = express();
-app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function(req, res) {
   const headerSignalValue = req.header('Sec-GPC')
@@ -11,7 +13,14 @@ app.get("/", function(req, res) {
   });
 });
 
-const listener = app.listen(process.env.PORT, function() {
-  console.log("Your app is listening on port " + listener.address().port);
-});
+// Only listen if not running in a serverless environment
+if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
+  const port = process.env.PORT || 3000;
+  app.listen(port, function() {
+    console.log("Your app is listening on port " + port);
+  });
+}
 
+// Export for serverless (Vercel)
+const serverless = require('serverless-http');
+module.exports = serverless(app);
