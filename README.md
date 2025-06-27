@@ -6,7 +6,7 @@
 # Global Privacy Control Server Reference Implementation
 
 Reference implementation of proposed Global Privacy Control standard written in Node/Express with sample code and instructions.
-Visit https://global-privacy-control.glitch.me to see this site live.
+Visit https://global-privacy-control.vercel.app to see this site live.
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable behavior to info@globalprivacycontrol.org.
